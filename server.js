@@ -7,7 +7,7 @@ const path = require('path');
 const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 // Setup lowdb
 const adapter = new FileSync(path.join(__dirname, 'db.json'));
@@ -127,4 +127,5 @@ app.get(/^\/(?!api\/).*/, (req, res) => {
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
+  
 });
